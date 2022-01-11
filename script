@@ -1,0 +1,1048 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Cupix = Instance.new("ScreenGui")
+local mainbase = Instance.new("Frame")
+local cont = Instance.new("Frame")
+local side = Instance.new("Frame")
+local commands = Instance.new("ImageButton")
+local cimg = Instance.new("ImageLabel")
+local info = Instance.new("ImageButton")
+local infimg = Instance.new("ImageLabel")
+local cmdpage = Instance.new("Frame")
+local cmds_scroll = Instance.new("ScrollingFrame")
+local UI = Instance.new("UIListLayout")
+local command = Instance.new("TextLabel")
+local infopage = Instance.new("Frame")
+local cmds_scroll_2 = Instance.new("ScrollingFrame")
+local UI_2 = Instance.new("UIListLayout")
+local command_2 = Instance.new("TextLabel")
+local lbl = Instance.new("TextLabel")
+
+--Properties:
+
+Cupix.Name = "Cupix"
+Cupix.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Cupix.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+mainbase.Name = "mainbase"
+mainbase.Parent = Cupix
+mainbase.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+mainbase.BorderSizePixel = 0
+mainbase.Position = UDim2.new(0.237616092, 0, 0.32802999, 0)
+mainbase.Size = UDim2.new(0, 441, 0, 53)
+
+cont.Name = "cont"
+cont.Parent = mainbase
+cont.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+cont.BorderSizePixel = 0
+cont.Position = UDim2.new(0, 0, 1, 0)
+cont.Size = UDim2.new(0, 441, 0, 238)
+
+side.Name = "side"
+side.Parent = cont
+side.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+side.BorderSizePixel = 0
+side.Size = UDim2.new(0, 54, 0, 238)
+
+commands.Name = "commands"
+commands.Parent = side
+commands.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+commands.BackgroundTransparency = 1.000
+commands.BorderColor3 = Color3.fromRGB(27, 42, 53)
+commands.BorderSizePixel = 0
+commands.Position = UDim2.new(-0.000727334293, 0, -0.00266075134, 0)
+commands.Size = UDim2.new(0, 53, 0, 53)
+commands.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+commands.ImageTransparency = 1.000
+
+cimg.Name = "cimg"
+cimg.Parent = commands
+cimg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cimg.BackgroundTransparency = 1.000
+cimg.Position = UDim2.new(0.264150947, 0, 0.320754707, 0)
+cimg.Size = UDim2.new(0, 24, 0, 24)
+cimg.Image = "rbxassetid://8510062302"
+
+info.Name = "info"
+info.Parent = side
+info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+info.BackgroundTransparency = 1.000
+info.BorderColor3 = Color3.fromRGB(27, 42, 53)
+info.BorderSizePixel = 0
+info.Position = UDim2.new(0.00944823027, 0, 0.216446206, 0)
+info.Size = UDim2.new(0, 53, 0, 53)
+info.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+info.ImageTransparency = 1.000
+
+infimg.Name = "infimg"
+infimg.Parent = info
+infimg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infimg.BackgroundTransparency = 1.000
+infimg.Position = UDim2.new(0.264150947, 0, 0.301886797, 0)
+infimg.Size = UDim2.new(0, 24, 0, 24)
+infimg.Image = "rbxassetid://8510077051"
+
+cmdpage.Name = "cmdpage"
+cmdpage.Parent = side
+cmdpage.Active = true
+cmdpage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmdpage.BackgroundTransparency = 1.000
+cmdpage.BorderSizePixel = 0
+cmdpage.Position = UDim2.new(1, 0, 0, 0)
+cmdpage.Selectable = true
+cmdpage.Size = UDim2.new(0, 387, 0, 238)
+cmdpage.Visible = false
+
+cmds_scroll.Name = "cmds_scroll"
+cmds_scroll.Parent = cmdpage
+cmds_scroll.Active = true
+cmds_scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmds_scroll.BackgroundTransparency = 1.000
+cmds_scroll.BorderSizePixel = 0
+cmds_scroll.Position = UDim2.new(0.0155038759, 0, 0.026750965, 0)
+cmds_scroll.Size = UDim2.new(0, 375, 0, 226)
+cmds_scroll.BottomImage = "rbxassetid://8502098439"
+cmds_scroll.CanvasSize = UDim2.new(0, 0, 2.61999989, 0)
+cmds_scroll.MidImage = "rbxassetid://8502098439"
+cmds_scroll.TopImage = "rbxassetid://8502098439"
+
+UI.Name = "UI"
+UI.Parent = cmds_scroll
+UI.SortOrder = Enum.SortOrder.LayoutOrder
+UI.Padding = UDim.new(0, 6)
+
+command.Name = "command"
+command.Parent = cmdpage
+command.Active = true
+command.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+command.BorderSizePixel = 0
+command.ClipsDescendants = true
+command.Size = UDim2.new(0.976744175, 0, 0, 0)
+command.Font = Enum.Font.GothamSemibold
+command.Text = " "
+command.TextColor3 = Color3.fromRGB(255, 255, 255)
+command.TextSize = 14.000
+
+infopage.Name = "infopage"
+infopage.Parent = side
+infopage.Active = true
+infopage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infopage.BackgroundTransparency = 1.000
+infopage.BorderSizePixel = 0
+infopage.Position = UDim2.new(1, 0, 0, 0)
+infopage.Selectable = true
+infopage.Size = UDim2.new(0, 387, 0, 238)
+infopage.Visible = false
+
+cmds_scroll_2.Name = "cmds_scroll"
+cmds_scroll_2.Parent = infopage
+cmds_scroll_2.Active = true
+cmds_scroll_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmds_scroll_2.BackgroundTransparency = 1.000
+cmds_scroll_2.BorderSizePixel = 0
+cmds_scroll_2.Position = UDim2.new(0.0155038759, 0, 0.026750965, 0)
+cmds_scroll_2.Size = UDim2.new(0, 375, 0, 226)
+cmds_scroll_2.BottomImage = "rbxassetid://8502098439"
+cmds_scroll_2.CanvasSize = UDim2.new(0, 0, 2.61999989, 0)
+cmds_scroll_2.MidImage = "rbxassetid://8502098439"
+cmds_scroll_2.TopImage = "rbxassetid://8502098439"
+
+UI_2.Name = "UI"
+UI_2.Parent = cmds_scroll_2
+UI_2.SortOrder = Enum.SortOrder.LayoutOrder
+UI_2.Padding = UDim.new(0, 6)
+
+command_2.Name = "command"
+command_2.Parent = infopage
+command_2.Active = true
+command_2.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+command_2.BorderSizePixel = 0
+command_2.ClipsDescendants = true
+command_2.Size = UDim2.new(0.976744175, 0, 0, 0)
+command_2.Font = Enum.Font.GothamSemibold
+command_2.Text = " "
+command_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+command_2.TextSize = 14.000
+
+lbl.Name = "lbl"
+lbl.Parent = mainbase
+lbl.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+lbl.BackgroundTransparency = 1.000
+lbl.Size = UDim2.new(0, 133, 0, 53)
+lbl.Font = Enum.Font.GothamSemibold
+lbl.Text = "CUPIX-CLIENT"
+lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+lbl.TextSize = 16.000
+lbl.TextWrapped = true
+
+-- Scripts:
+
+local function OAHGDM_fake_script() -- cont.buttonfunc 
+	local script = Instance.new('LocalScript', cont)
+
+	--{buttons}--
+	-------------------
+	--{commandsbutton}--
+	local commandsbtn = script.Parent.side.commands
+	local commandsbtnimage = script.Parent.side.commands.cimg
+	local commands_opened = false
+	local c_able_to_be_hovered = false
+	-------------------
+	--{infobtn}--
+	local infobtn = script.Parent.side.info
+	local infobtnimage = script.Parent.side.info.infimg
+	local info_opened = false
+	local info_able_to_be_hovered = false
+	-------------------
+	--{tweensetup}--
+	local speed = 0.2
+	local ts = game:GetService('TweenService')
+	local tf = TweenInfo.new(speed, Enum.EasingStyle.Linear , Enum.EasingDirection.Out, 0)
+	-------------------
+	pcall(function()
+		commandsbtn.MouseEnter:Connect(function()
+			if c_able_to_be_hovered == false then
+				if commands_opened == false then 
+					c_able_to_be_hovered = true
+				else
+					c_able_to_be_hovered = false
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		commandsbtn.MouseLeave:Connect(function()
+			if c_able_to_be_hovered == true then
+				c_able_to_be_hovered = false
+				local color = Color3.fromRGB(255,255,255) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		commandsbtn.MouseButton1Click:Connect(function()
+			if commands_opened == false then
+				commands_opened = true
+				c_able_to_be_hovered = false
+				script.Parent.side.cmdpage.Visible = true
+				if info_opened == true then
+					info_opened = false
+					local color = Color3.fromRGB(255,255,255) 
+					local image_color = color
+					ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			else
+				commands_opened = false
+				script.Parent.side.cmdpage.Visible = false
+				local color = Color3.fromRGB(255,255,255)
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseEnter:Connect(function()
+			if info_able_to_be_hovered == false then
+				if info_opened == false then 
+					info_able_to_be_hovered = true
+				else
+					info_able_to_be_hovered = false
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseLeave:Connect(function()
+			if info_able_to_be_hovered == true then
+				info_able_to_be_hovered = false
+				local color = Color3.fromRGB(255,255,255) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseButton1Click:Connect(function()
+			if info_opened == false then
+				info_opened = true
+				info_able_to_be_hovered = false
+				if commands_opened == true then
+					commands_opened = false
+					script.Parent.side.cmdpage.Visible = false
+					local color = Color3.fromRGB(255,255,255) 
+					local image_color = color
+					ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			else
+				info_opened = false
+				local color = Color3.fromRGB(255,255,255)
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)	
+	end)
+	
+end
+coroutine.wrap(OAHGDM_fake_script)()
+local function JINNC_fake_script() -- cmds_scroll.clonecmd 
+	local script = Instance.new('LocalScript', cmds_scroll)
+
+	
+	local list = script.Parent.Parent.cmds_scroll
+	local command = script.Parent.Parent.command
+	local function title()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  COMMANDS"
+			newcmd.FontSize = Enum.FontSize.Size14
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 50)
+		end)
+	end
+	local function tip()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  TIP: These are all chat commands"
+			newcmd.Name = "generatedcommand"
+			newcmd.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function neutralcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .neutral"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function inmatecmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .inmate"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function copcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .cop"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function crimcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .crim"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gunscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .guns"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function dropitemscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .dropitems"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function viruscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .virus"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function unviruscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .unvirus"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function resetcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .re"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function walkspeedcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .walkspeed"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function jumppowercmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .jumppower"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function killcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .kill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function loopkillcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .loopkill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function unloopkillcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .unloopkill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gotocmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .goto"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function modguns()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .modguns"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	title()
+	wait()
+	tip()
+	neutralcmd()
+	inmatecmd()
+	crimcmd()
+	gunscmd()
+	viruscmd()
+	unviruscmd()
+	resetcmd()
+	walkspeedcmd()
+	jumppowercmd()
+	killcmd()
+	loopkillcmd()
+	unloopkillcmd()
+	gotocmd()
+		
+	
+end
+coroutine.wrap(JINNC_fake_script)()
+local function TZWZWB_fake_script() -- cmds_scroll_2.clonecmd 
+	local script = Instance.new('LocalScript', cmds_scroll_2)
+
+	
+	local list = script.Parent.Parent.cmds_scroll
+	local command = script.Parent.Parent.command
+	local function title()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  COMMANDS"
+			newcmd.FontSize = Enum.FontSize.Size14
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 50)
+		end)
+	end
+	local function tip()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  TIP: These are all chat commands"
+			newcmd.Name = "generatedcommand"
+			newcmd.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function neutralcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .neutral"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function inmatecmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .inmate"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function copcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .cop"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function crimcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .crim"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gunscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .guns"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function dropitemscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .dropitems"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function viruscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .virus"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function unviruscmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .unvirus"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function resetcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .re"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function walkspeedcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .walkspeed"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function jumppowercmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .jumppower"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function killcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .kill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function loopkillcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .loopkill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function unloopkillcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .unloopkill"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gotocmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .goto"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function modguns()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .modguns"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	title()
+	wait()
+	tip()
+	neutralcmd()
+	inmatecmd()
+	crimcmd()
+	gunscmd()
+	viruscmd()
+	unviruscmd()
+	resetcmd()
+	walkspeedcmd()
+	jumppowercmd()
+	killcmd()
+	loopkillcmd()
+	unloopkillcmd()
+	gotocmd()
+		
+	
+end
+coroutine.wrap(TZWZWB_fake_script)()
+local function ZXHFUO_fake_script() -- mainbase.drag 
+	local script = Instance.new('LocalScript', mainbase)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.095
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			local TweenService = game:GetService('TweenService')
+			local Speed = 0.2
+			local TweenFunc = TweenInfo.new(Speed, Enum.EasingStyle.Linear , Enum.EasingDirection.Out, 0)
+			--local Color1 = Color3.fromRGB(255, 255, 255)
+			--TweenService:Create(script.Parent,TweenFunc, {BorderColor3 = Color1}):Play()
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+					--local Color2 = Color3.fromRGB(35,35,35)
+					--TweenService:Create(script.Parent,TweenFunc, {BorderColor3 = Color2}):Play()
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	
+end
+coroutine.wrap(ZXHFUO_fake_script)()
+local function WBRD_fake_script() -- Cupix.loaded 
+	local script = Instance.new('LocalScript', Cupix)
+
+	local function quickrespawn()
+		while true do wait()
+			if game.Players.LocalPlayer.Character.Humanoid.Health <= 15 then
+				local location = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+				local A_1 = "CupixUser"
+				local Event = game:GetService("Workspace").Remote.loadchar
+				Event:InvokeServer(A_1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = location
+			end
+		end
+	end
+	
+	while true do wait()
+		quickrespawn()
+	end
+	local player = game.Players.LocalPlayer
+	
+end
+coroutine.wrap(WBRD_fake_script)()
+local function FSTOXKX_fake_script() -- Cupix.chat commands 
+	local script = Instance.new('LocalScript', Cupix)
+
+	game.Players.LocalPlayer.Chatted:Connect(function(message)
+		_G.Spam = false
+		_G.Loop = false
+		_G.Loop2 = false
+		local activatekillaura = false
+		local function getplrname(String)
+			if not String then return end
+			local Yes = {}
+			for _, Player in ipairs(game.Players:GetPlayers()) do
+				if string.lower(Player.Name):match(string.lower(String)) or string.lower(Player.DisplayName):match(string.lower(String)) then
+					table.insert(Yes, Player)
+				end
+			end
+			if #Yes > 0 then
+				return Yes[1]
+			elseif #Yes < 1 then
+				return nil
+			end
+		end
+		local messagesplit = message:split(" ")
+		if message == ".quickre" then
+			if game.Players.LocalPlayer.Character.Humanoid.Health <= 15 then
+				local location = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+				local mp = game.Players.LocalPlayer
+				local A_1 = mp
+				local Event = game:GetService("Workspace").Remote.loadchar
+				Event:InvokeServer(A_1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = location
+			end
+		end
+	
+		if message == ".dropitems" then
+			local RemEvent = "Bright blue"
+			local Event = game:GetService("Workspace").Remote.TeamEvent
+			Event:FireServer(RemEvent)
+			wait()
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(0.5)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+			wait(1)
+			local recentpos = game.Players.LocalPlayer.Character.Humanoid.Torso.Position
+			local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+			local hr = char:WaitForChild("HumanoidRootPart")
+			local player = game.Players.LocalPlayer.Character.Humanoid
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+			wait()
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			workspace.Remote.loadchar:InvokeServer(nil, Color3.fromRGB(20,20,20))
+			wait()
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+		end
+	
+		if message == ".exit" then
+			script.Parent.Parent.Parent.mainbase:Destroy()
+			script.Parent:Destroy()
+		end
+		if messagesplit[1] == ".goto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
+			end
+		end
+	
+		if messagesplit[1] == ".walkspeed" then
+			local number = messagesplit[2]
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tostring(number)
+		end
+	
+		if messagesplit[1] == ".jumppower" then
+			local number = messagesplit[2]
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = tostring(number)
+		end
+	
+		local function GetGetCurPos()
+			return game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		end
+	
+		local function GetGetCamCF()
+			return workspace.CurrentCamera.CFrame
+		end
+	
+		local function GetUserTeam()
+			return game.Players.LocalPlayer.TeamColor.Name
+		end
+		
+		local function Kill(Player)
+			pcall(function()
+				if Player.Character:FindFirstChild("ForceField") or not workspace:FindFirstChild(Player.Name) or not workspace:FindFirstChild(Player.Name):FindFirstChild("Head") or Player == nil or Player.Character.Parent ~= workspace then return end
+				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+	
+				local MyTeam = GetUserTeam()()
+				if Player.TeamColor.Name == game.Players.LocalPlayer.TeamColor.Name then
+					local savedcf = GetGetCurPos()()
+					local savedcamcf = GetGetCamCF()()
+					workspace.Remote.loadchar:InvokeServer(nil, BrickColor.random().Name)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+					workspace.CurrentCamera.CFrame = savedcamcf
+					workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+				end
+	
+				local Gun = game.Players.LocalPlayer.Character:FindFirstChild("Remington 870") or game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
+	
+				local FireEvent = {
+					[1] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [2] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [3] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [4] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [5] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [6] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [7] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}, [8] = {
+						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+						["Distance"] = 0, 
+						["Cframe"] = CFrame.new(), 
+						["Hit"] = workspace[Player.Name].Head
+					}
+				}
+	
+				game:GetService("ReplicatedStorage").ShootEvent:FireServer(FireEvent, Gun)
+				Gun.Parent = game.Players.LocalPlayer.Character
+				game.Players.LocalPlayer.Character["Remington 870"]:Destroy()
+			end)
+		end
+	
+		
+		if messagesplit[1] == ".kill" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				Kill(playerName)
+			else
+				print('player not found')
+			end
+		end
+		
+		if messagesplit[1] == ".loopkill" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			_G.Loop2 = true
+			while _G.Loop2 == true do wait() 
+				if playerName then
+					Kill(playerName)
+				else
+					print('player not found')
+				end
+			end
+		end
+		
+		if message == ".unloopkill" then
+			_G.Loop2 = false
+		end
+		
+		if message == ".re" then
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+		end
+	
+		if message == ".doors" then
+			local doors = game:GetService("Workspace").Doors
+			doors:Remove()
+		end
+	
+		if message == ".guns" then
+			local ItemEvent = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+			local Event = game:GetService("Workspace").Remote.ItemHandler
+			Event:InvokeServer(ItemEvent)
+			local ItemEvent = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
+			local Event = game:GetService("Workspace").Remote.ItemHandler
+			Event:InvokeServer(ItemEvent)
+			local ItemEvent = game:GetService("Workspace")["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP
+			local Event = game:GetService("Workspace").Remote.ItemHandler
+			Event:InvokeServer(ItemEvent)
+		end
+	
+		if message == ".virus"  then
+			local player = game.Players.LocalPlayer
+			local players = game:GetService('Players')
+			_G.Spam = true
+			while _G.Spam == true do wait() 
+				for i,v in pairs(game.Players:GetChildren()) do
+					if v.UserId == player.UserId then 
+	
+					else
+						game:GetService('ReplicatedStorage').meleeEvent:FireServer(v)
+					end
+				end
+			end
+		end
+	
+		if message == ".cop" then
+			local RemEvent = "Bright blue"
+			local Event = game:GetService("Workspace").Remote.TeamEvent
+			Event:FireServer(RemEvent)
+		end
+	
+		if message == ".inmate" then
+			local RemEvent = "Bright orange"
+			local Event = game:GetService("Workspace").Remote.TeamEvent
+			Event:FireServer(RemEvent)
+		end
+		
+		if message == ".crim" then
+			local recentpos = game.Players.LocalPlayer.Character.Humanoid.Torso.Position
+			local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+			local hr = char:WaitForChild("HumanoidRootPart")
+			local player = game.Players.LocalPlayer.Character.Humanoid
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+			wait()
+			char:SetPrimaryPartCFrame(CFrame.new(-920.278, 95.2969, 2137.71))
+			wait()
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+		end
+	
+		if message == ".unvirus" then
+			_G.Spam = false
+		end
+		
+		if message == ".neutral" then
+			local recentpos = game.Players.LocalPlayer.Character.Humanoid.Torso.Position
+			local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+			local hr = char:WaitForChild("HumanoidRootPart")
+			local player = game.Players.LocalPlayer.Character.Humanoid
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+			wait()
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			workspace.Remote.loadchar:InvokeServer(nil, Color3.fromRGB(20,20,20))
+			wait()
+			char:SetPrimaryPartCFrame(CFrame.new(915.817688, 99.9886246, 2330.42773, -1, -4.6318096e-09, -5.36907464e-06, -4.63178873e-09, 1, -3.93335986e-09, 5.36907464e-06, -3.93333499e-09, -1))	
+		end
+	end)
+end
+coroutine.wrap(FSTOXKX_fake_script)()
