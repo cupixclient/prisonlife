@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function OTMJS_fake_script() -- cont.buttonfunc 
+local function NKZEHLV_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function OTMJS_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(OTMJS_fake_script)()
-local function DYALU_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(NKZEHLV_fake_script)()
+local function PLHJYHT_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -387,8 +387,8 @@ local function DYALU_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(DYALU_fake_script)()
-local function AVZPUUO_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(PLHJYHT_fake_script)()
+local function YPQOPJ_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -430,8 +430,8 @@ local function AVZPUUO_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(AVZPUUO_fake_script)()
-local function QTVP_fake_script() -- mainbase.drag 
+coroutine.wrap(YPQOPJ_fake_script)()
+local function GJYLG_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -448,7 +448,20 @@ local function QTVP_fake_script() -- mainbase.drag
 		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
 	end
 	
-	
+	UIS.InputBegan:Connect(function(input)
+		local showframe = true
+		local guiframe = script.Parent
+		if input.KeyCode == Enum.KeyCode.LeftControl then
+			if showframe == true then
+				showframe = false
+				guiframe.Visible = false
+			end
+			if showframe == false then
+				showframe = true
+				guiframe.Visible = true
+			end
+		end	
+	end)
 	
 	frame.InputBegan:Connect(function(input)
 		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
@@ -480,8 +493,26 @@ local function QTVP_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(QTVP_fake_script)()
-local function ZENDX_fake_script() -- Cupix.loaded 
+coroutine.wrap(GJYLG_fake_script)()
+local function VXUW_fake_script() -- mainbase.s/h 
+	local script = Instance.new('LocalScript', mainbase)
+
+	local mainframe = script.Parent
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	mouse.KeyDown:connect(function(key)
+		if key:upper() == "V" then
+			if mainframe.Visible == false then
+				mainframe.Visible = true
+			else
+				mainframe.Visible = false
+			end
+		end
+	end)
+end
+coroutine.wrap(VXUW_fake_script)()
+local function LSCZU_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -500,11 +531,10 @@ local function ZENDX_fake_script() -- Cupix.loaded
 		quickrespawn()
 	end
 	
-	local player = game.Players.LocalPlayer
 	
 end
-coroutine.wrap(ZENDX_fake_script)()
-local function BWIG_fake_script() -- Cupix.chat commands 
+coroutine.wrap(LSCZU_fake_script)()
+local function TAEXO_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -612,4 +642,4 @@ local function BWIG_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(BWIG_fake_script)()
+coroutine.wrap(TAEXO_fake_script)()
