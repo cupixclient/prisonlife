@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function WJNQ_fake_script() -- cont.buttonfunc 
+local function LFMI_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function WJNQ_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(WJNQ_fake_script)()
-local function FBHVY_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(LFMI_fake_script)()
+local function UULAS_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -462,8 +462,8 @@ local function FBHVY_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(FBHVY_fake_script)()
-local function YSSDUDK_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(UULAS_fake_script)()
+local function GHJMCU_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -505,8 +505,8 @@ local function YSSDUDK_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(YSSDUDK_fake_script)()
-local function KIBREN_fake_script() -- mainbase.drag 
+coroutine.wrap(GHJMCU_fake_script)()
+local function VNVPFZS_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -555,8 +555,8 @@ local function KIBREN_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(KIBREN_fake_script)()
-local function PGUJNGP_fake_script() -- Cupix.loaded 
+coroutine.wrap(VNVPFZS_fake_script)()
+local function DSVUJDD_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -578,8 +578,8 @@ local function PGUJNGP_fake_script() -- Cupix.loaded
 	local player = game.Players.LocalPlayer
 	
 end
-coroutine.wrap(PGUJNGP_fake_script)()
-local function GKQJ_fake_script() -- Cupix.chat commands 
+coroutine.wrap(DSVUJDD_fake_script)()
+local function FENI_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -781,7 +781,7 @@ local function GKQJ_fake_script() -- Cupix.chat commands
 		if messagesplit[1] == ".kill" then
 			local name = messagesplit[2]
 			local playerName = getplrname(name)
-			if playerName == true then
+			if playerName ~= nil then
 				Kill(playerName)
 			else
 				print('player not found')
@@ -866,4 +866,4 @@ local function GKQJ_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(GKQJ_fake_script)()
+coroutine.wrap(FENI_fake_script)()
