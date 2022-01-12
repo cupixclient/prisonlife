@@ -613,22 +613,6 @@ local function TAEXO_fake_script() -- Cupix.chat commands
 				p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
 			end
 		end
-		if messagesplit[1] == ".loopgoto" then
-			local name = messagesplit[2]
-			local playerName = getplrname(name)
-			if playerName then
-				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
-				local p4 = tostring(playerName)
-				local pos = p3.CFrame
-				_G.Loop2 = true
-				while _G.Loop2 == true do wait()
-					p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if message == ".unloopgoto" then
-			_G.Loop2 = false
-		end
 		if messagesplit[1] == ".walkspeed" then
 			local number = messagesplit[2]
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tostring(number)
