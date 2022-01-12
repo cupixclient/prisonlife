@@ -1,0 +1,150 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local cmdpage = Instance.new("Frame")
+local cmds_scroll = Instance.new("ScrollingFrame")
+local UI = Instance.new("UIListLayout")
+local command = Instance.new("TextLabel")
+
+--Properties:
+
+cmdpage.Name = "cmdpage"
+cmdpage.Parent = game.StarterGui.Cupix.mainbase.cont.side
+cmdpage.Active = true
+cmdpage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmdpage.BackgroundTransparency = 1.000
+cmdpage.BorderSizePixel = 0
+cmdpage.Position = UDim2.new(1, 0, 0, 0)
+cmdpage.Selectable = true
+cmdpage.Size = UDim2.new(0, 387, 0, 238)
+cmdpage.Visible = false
+
+cmds_scroll.Name = "cmds_scroll"
+cmds_scroll.Parent = cmdpage
+cmds_scroll.Active = true
+cmds_scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmds_scroll.BackgroundTransparency = 1.000
+cmds_scroll.BorderSizePixel = 0
+cmds_scroll.Position = UDim2.new(0.0155038759, 0, 0.026750965, 0)
+cmds_scroll.Size = UDim2.new(0, 375, 0, 226)
+cmds_scroll.BottomImage = "rbxassetid://8502098439"
+cmds_scroll.CanvasSize = UDim2.new(0, 0, 1.40999997, 0)
+cmds_scroll.MidImage = "rbxassetid://8502098439"
+cmds_scroll.TopImage = "rbxassetid://8502098439"
+
+UI.Name = "UI"
+UI.Parent = cmds_scroll
+UI.SortOrder = Enum.SortOrder.LayoutOrder
+UI.Padding = UDim.new(0, 6)
+
+command.Name = "command"
+command.Parent = cmdpage
+command.Active = true
+command.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+command.BorderSizePixel = 0
+command.ClipsDescendants = true
+command.Size = UDim2.new(0.976744175, 0, 0, 0)
+command.Font = Enum.Font.GothamSemibold
+command.Text = " "
+command.TextColor3 = Color3.fromRGB(255, 255, 255)
+command.TextSize = 14.000
+
+-- Scripts:
+
+local function EJMRB_fake_script() -- cmds_scroll.clonecmd 
+	local script = Instance.new('LocalScript', cmds_scroll)
+
+	
+	local list = script.Parent.Parent.cmds_scroll
+	local command = script.Parent.Parent.command
+	local function title()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  COMMANDS"
+			newcmd.FontSize = Enum.FontSize.Size14
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 50)
+		end)
+	end
+	local function tip()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  TIP: These are all chat commands"
+			newcmd.Name = "generatedcommand"
+			newcmd.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function autofarmcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .farm & .stopfarm"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	
+	local function gotocmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .goto"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function farmoncecmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .farmonce"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function resetcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .re"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function walkspeedcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .walkspeed"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function jumppowercmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .jumppower"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	title()
+	wait()
+	tip()
+	autofarmcmd()
+	farmoncecmd()
+	gotocmd()
+	resetcmd()
+	walkspeedcmd()
+	jumppowercmd()
+	
+		
+	
+end
+coroutine.wrap(EJMRB_fake_script)()
