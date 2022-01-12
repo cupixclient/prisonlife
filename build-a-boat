@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function NKZEHLV_fake_script() -- cont.buttonfunc 
+local function PQTS_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function NKZEHLV_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(NKZEHLV_fake_script)()
-local function PLHJYHT_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(PQTS_fake_script)()
+local function NDTO_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -387,8 +387,8 @@ local function PLHJYHT_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(PLHJYHT_fake_script)()
-local function YPQOPJ_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(NDTO_fake_script)()
+local function ZJDFI_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -430,8 +430,8 @@ local function YPQOPJ_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(YPQOPJ_fake_script)()
-local function GJYLG_fake_script() -- mainbase.drag 
+coroutine.wrap(ZJDFI_fake_script)()
+local function MMDXT_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -493,8 +493,8 @@ local function GJYLG_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(GJYLG_fake_script)()
-local function VXUW_fake_script() -- mainbase.s/h 
+coroutine.wrap(MMDXT_fake_script)()
+local function VRKZ_fake_script() -- mainbase.s/h 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local mainframe = script.Parent
@@ -511,30 +511,17 @@ local function VXUW_fake_script() -- mainbase.s/h
 		end
 	end)
 end
-coroutine.wrap(VXUW_fake_script)()
-local function LSCZU_fake_script() -- Cupix.loaded 
+coroutine.wrap(VRKZ_fake_script)()
+local function VHNYO_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
-	local function quickrespawn()
-		while true do wait()
-			if game.Players.LocalPlayer.Character.Humanoid.Health <= 15 then
-				local location = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				local A_1 = "CupixUser"
-				local Event = game:GetService("Workspace").Remote.loadchar
-				Event:InvokeServer(A_1)
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = location
-			end
-		end
-	end
+	script.Parent.ResetOnSpawn = false;
 	
-	while true do wait()
-		quickrespawn()
-	end
 	
 	
 end
-coroutine.wrap(LSCZU_fake_script)()
-local function TAEXO_fake_script() -- Cupix.chat commands 
+coroutine.wrap(VHNYO_fake_script)()
+local function NPHTB_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -613,6 +600,22 @@ local function TAEXO_fake_script() -- Cupix.chat commands
 				p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
 			end
 		end
+		if messagesplit[1] == ".loopgoto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				_G.Loop2 = true
+				while _G.Loop2 == true do wait()
+					p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
+				end
+			end
+		end
+		if message == ".unloopgoto" then
+			_G.Loop2 = false
+		end
 		if messagesplit[1] == ".walkspeed" then
 			local number = messagesplit[2]
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tostring(number)
@@ -626,4 +629,4 @@ local function TAEXO_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(TAEXO_fake_script)()
+coroutine.wrap(NPHTB_fake_script)()
