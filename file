@@ -4,5 +4,5 @@ if game.PlaceId == 155615604 then
 end
 --{Build A Boat}-- 
 if game.PlaceId == 537413528 then
- --insert loadstring 
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/cupixclient/source/main/build-a-boat'),true))()
 end
