@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function LFMI_fake_script() -- cont.buttonfunc 
+local function RVUPKA_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function LFMI_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(LFMI_fake_script)()
-local function UULAS_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(RVUPKA_fake_script)()
+local function DMNP_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -418,10 +418,10 @@ local function UULAS_fake_script() -- cmds_scroll.clonecmd
 			newcmd.Size = UDim2.new(0, 356,0, 35)
 		end)
 	end
-	local function killcmd()
+	local function loopgotocmd()
 		pcall(function()
 			local newcmd = command:Clone()
-			newcmd.Text = "  .kill"
+			newcmd.Text = "  .loopgoto & .unloopgoto"
 			newcmd.Name = "generatedcommand"
 			newcmd.Parent = list
 			newcmd.Size = UDim2.new(0, 356,0, 35)
@@ -457,13 +457,13 @@ local function UULAS_fake_script() -- cmds_scroll.clonecmd
 	resetcmd()
 	walkspeedcmd()
 	jumppowercmd()
-	killcmd()
+	loopgotocmd()
 	gotocmd()
 		
 	
 end
-coroutine.wrap(UULAS_fake_script)()
-local function GHJMCU_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(DMNP_fake_script)()
+local function RXJMWL_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -505,8 +505,8 @@ local function GHJMCU_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(GHJMCU_fake_script)()
-local function VNVPFZS_fake_script() -- mainbase.drag 
+coroutine.wrap(RXJMWL_fake_script)()
+local function WUOUFA_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -555,8 +555,8 @@ local function VNVPFZS_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(VNVPFZS_fake_script)()
-local function DSVUJDD_fake_script() -- Cupix.loaded 
+coroutine.wrap(WUOUFA_fake_script)()
+local function XEOUJCU_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -578,8 +578,8 @@ local function DSVUJDD_fake_script() -- Cupix.loaded
 	local player = game.Players.LocalPlayer
 	
 end
-coroutine.wrap(DSVUJDD_fake_script)()
-local function FENI_fake_script() -- Cupix.chat commands 
+coroutine.wrap(XEOUJCU_fake_script)()
+local function WAUYO_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -686,6 +686,22 @@ local function FENI_fake_script() -- Cupix.chat commands
 				p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
 			end
 		end
+		if messagesplit[1] == ".loopgoto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				_G.Loop2 = true
+				while _G.Loop2 == true do wait()
+					p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
+				end
+			end
+		end
+		if message == ".unloopgoto" then
+			_G.Loop2 = false
+		end
 	
 		if messagesplit[1] == ".walkspeed" then
 			local number = messagesplit[2]
@@ -696,98 +712,7 @@ local function FENI_fake_script() -- Cupix.chat commands
 			local number = messagesplit[2]
 			game.Players.LocalPlayer.Character.Humanoid.JumpPower = tostring(number)
 		end
-	
-		local function GetGetCurPos()
-			return game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		end
-	
-		local function GetGetCamCF()
-			return workspace.CurrentCamera.CFrame
-		end
-	
-		local function GetUserTeam()
-			return game.Players.LocalPlayer.TeamColor.Name
-		end
 		
-		function Kill(Player)
-			pcall(function()
-				if Player.Character:FindFirstChild("ForceField") or not workspace:FindFirstChild(Player.Name) or not workspace:FindFirstChild(Player.Name):FindFirstChild("Head") or Player == nil or Player.Character.Parent ~= workspace then return end
-				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-	
-				local MyTeam = GetUserTeam()()
-				if Player.TeamColor.Name == game.Players.LocalPlayer.TeamColor.Name then
-					local savedcf = GetGetCurPos()()
-					local savedcamcf = GetGetCamCF()()
-					workspace.Remote.loadchar:InvokeServer(nil, BrickColor.random().Name)
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-					workspace.CurrentCamera.CFrame = savedcamcf
-					workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-				end
-	
-				local Gun = game.Players.LocalPlayer.Character:FindFirstChild("Remington 870") or game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
-	
-				local FireEvent = {
-					[1] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [2] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [3] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [4] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [5] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [6] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [7] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}, [8] = {
-						["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
-						["Distance"] = 0, 
-						["Cframe"] = CFrame.new(), 
-						["Hit"] = workspace[Player.Name].Head
-					}
-				}
-	
-				game:GetService("ReplicatedStorage").ShootEvent:FireServer(FireEvent, Gun)
-				Gun.Parent = game.Players.LocalPlayer.Character
-				game.Players.LocalPlayer.Character["Remington 870"]:Destroy()
-			end)
-		end
-	
-	
-		
-		if messagesplit[1] == ".kill" then
-			local name = messagesplit[2]
-			local playerName = getplrname(name)
-			if playerName ~= nil then
-				Kill(playerName)
-			else
-				print('player not found')
-			end
-		end
-	
 		if message == ".re" then
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
 		end
@@ -866,4 +791,4 @@ local function FENI_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(FENI_fake_script)()
+coroutine.wrap(WAUYO_fake_script)()
