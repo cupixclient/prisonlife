@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function SSNWVM_fake_script() -- cont.buttonfunc 
+local function WJNQ_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function SSNWVM_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(SSNWVM_fake_script)()
-local function QEIWI_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(WJNQ_fake_script)()
+local function FBHVY_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -462,8 +462,8 @@ local function QEIWI_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(QEIWI_fake_script)()
-local function CPNTCYZ_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(FBHVY_fake_script)()
+local function YSSDUDK_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -505,8 +505,8 @@ local function CPNTCYZ_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(CPNTCYZ_fake_script)()
-local function SPOLD_fake_script() -- mainbase.drag 
+coroutine.wrap(YSSDUDK_fake_script)()
+local function KIBREN_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -555,8 +555,8 @@ local function SPOLD_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(SPOLD_fake_script)()
-local function VFUN_fake_script() -- Cupix.loaded 
+coroutine.wrap(KIBREN_fake_script)()
+local function PGUJNGP_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -574,11 +574,12 @@ local function VFUN_fake_script() -- Cupix.loaded
 	while true do wait()
 		quickrespawn()
 	end
+	
 	local player = game.Players.LocalPlayer
 	
 end
-coroutine.wrap(VFUN_fake_script)()
-local function INCEOP_fake_script() -- Cupix.chat commands 
+coroutine.wrap(PGUJNGP_fake_script)()
+local function GKQJ_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -708,7 +709,7 @@ local function INCEOP_fake_script() -- Cupix.chat commands
 			return game.Players.LocalPlayer.TeamColor.Name
 		end
 		
-		local function Kill(Player)
+		function Kill(Player)
 			pcall(function()
 				if Player.Character:FindFirstChild("ForceField") or not workspace:FindFirstChild(Player.Name) or not workspace:FindFirstChild(Player.Name):FindFirstChild("Head") or Player == nil or Player.Character.Parent ~= workspace then return end
 				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
@@ -775,11 +776,12 @@ local function INCEOP_fake_script() -- Cupix.chat commands
 			end)
 		end
 	
+	
 		
 		if messagesplit[1] == ".kill" then
 			local name = messagesplit[2]
 			local playerName = getplrname(name)
-			if playerName then
+			if playerName == true then
 				Kill(playerName)
 			else
 				print('player not found')
@@ -864,4 +866,4 @@ local function INCEOP_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(INCEOP_fake_script)()
+coroutine.wrap(GKQJ_fake_script)()
