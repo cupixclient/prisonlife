@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function BVRCBZG_fake_script() -- cont.buttonfunc 
+local function WOSUBT_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function BVRCBZG_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(BVRCBZG_fake_script)()
-local function OKYMOO_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(WOSUBT_fake_script)()
+local function BPFAOF_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -462,8 +462,8 @@ local function OKYMOO_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(OKYMOO_fake_script)()
-local function JJANXW_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(BPFAOF_fake_script)()
+local function HSYNCS_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -505,8 +505,8 @@ local function JJANXW_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(JJANXW_fake_script)()
-local function TYLARLA_fake_script() -- mainbase.drag 
+coroutine.wrap(HSYNCS_fake_script)()
+local function IDTJKQ_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -555,8 +555,8 @@ local function TYLARLA_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(TYLARLA_fake_script)()
-local function HCGTO_fake_script() -- mainbase.s/h 
+coroutine.wrap(IDTJKQ_fake_script)()
+local function GIBCBBG_fake_script() -- mainbase.s/h 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local mainframe = script.Parent
@@ -573,8 +573,8 @@ local function HCGTO_fake_script() -- mainbase.s/h
 		end
 	end)
 end
-coroutine.wrap(HCGTO_fake_script)()
-local function DBROKTK_fake_script() -- Cupix.loaded 
+coroutine.wrap(GIBCBBG_fake_script)()
+local function WYIJZUS_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -593,11 +593,11 @@ local function DBROKTK_fake_script() -- Cupix.loaded
 		quickrespawn()
 	end
 	
-	local player = game.Players.LocalPlayer
+	script.Parent.ResetOnSpawn = false;
 	
 end
-coroutine.wrap(DBROKTK_fake_script)()
-local function LHAK_fake_script() -- Cupix.chat commands 
+coroutine.wrap(WYIJZUS_fake_script)()
+local function SZVDQ_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -809,4 +809,4 @@ local function LHAK_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(LHAK_fake_script)()
+coroutine.wrap(SZVDQ_fake_script)()
