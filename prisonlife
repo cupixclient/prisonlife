@@ -180,7 +180,7 @@ lbl.TextWrapped = true
 
 -- Scripts:
 
-local function RVUPKA_fake_script() -- cont.buttonfunc 
+local function BVRCBZG_fake_script() -- cont.buttonfunc 
 	local script = Instance.new('LocalScript', cont)
 
 	--{buttons}--
@@ -292,8 +292,8 @@ local function RVUPKA_fake_script() -- cont.buttonfunc
 	end)
 	
 end
-coroutine.wrap(RVUPKA_fake_script)()
-local function DMNP_fake_script() -- cmds_scroll.clonecmd 
+coroutine.wrap(BVRCBZG_fake_script)()
+local function OKYMOO_fake_script() -- cmds_scroll.clonecmd 
 	local script = Instance.new('LocalScript', cmds_scroll)
 
 	
@@ -462,8 +462,8 @@ local function DMNP_fake_script() -- cmds_scroll.clonecmd
 		
 	
 end
-coroutine.wrap(DMNP_fake_script)()
-local function RXJMWL_fake_script() -- info_scroll.clonelbl 
+coroutine.wrap(OKYMOO_fake_script)()
+local function JJANXW_fake_script() -- info_scroll.clonelbl 
 	local script = Instance.new('LocalScript', info_scroll)
 
 	
@@ -505,8 +505,8 @@ local function RXJMWL_fake_script() -- info_scroll.clonelbl
 		
 	
 end
-coroutine.wrap(RXJMWL_fake_script)()
-local function WUOUFA_fake_script() -- mainbase.drag 
+coroutine.wrap(JJANXW_fake_script)()
+local function TYLARLA_fake_script() -- mainbase.drag 
 	local script = Instance.new('LocalScript', mainbase)
 
 	local UIS = game:GetService('UserInputService')
@@ -555,8 +555,26 @@ local function WUOUFA_fake_script() -- mainbase.drag
 	
 	
 end
-coroutine.wrap(WUOUFA_fake_script)()
-local function XEOUJCU_fake_script() -- Cupix.loaded 
+coroutine.wrap(TYLARLA_fake_script)()
+local function HCGTO_fake_script() -- mainbase.s/h 
+	local script = Instance.new('LocalScript', mainbase)
+
+	local mainframe = script.Parent
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	mouse.KeyDown:connect(function(key)
+		if key:upper() == "V" then
+			if mainframe.Visible == false then
+				mainframe.Visible = true
+			else
+				mainframe.Visible = false
+			end
+		end
+	end)
+end
+coroutine.wrap(HCGTO_fake_script)()
+local function DBROKTK_fake_script() -- Cupix.loaded 
 	local script = Instance.new('LocalScript', Cupix)
 
 	local function quickrespawn()
@@ -578,8 +596,8 @@ local function XEOUJCU_fake_script() -- Cupix.loaded
 	local player = game.Players.LocalPlayer
 	
 end
-coroutine.wrap(XEOUJCU_fake_script)()
-local function WAUYO_fake_script() -- Cupix.chat commands 
+coroutine.wrap(DBROKTK_fake_script)()
+local function LHAK_fake_script() -- Cupix.chat commands 
 	local script = Instance.new('LocalScript', Cupix)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(message)
@@ -673,7 +691,7 @@ local function WAUYO_fake_script() -- Cupix.chat commands
 		end
 	
 		if message == ".exit" then
-			script.Parent.Parent.Parent.mainbase:Destroy()
+			script.Parent.mainbase:Destroy()
 			script.Parent:Destroy()
 		end
 		if messagesplit[1] == ".goto" then
@@ -791,4 +809,4 @@ local function WAUYO_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(WAUYO_fake_script)()
+coroutine.wrap(LHAK_fake_script)()
