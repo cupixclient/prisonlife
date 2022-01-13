@@ -628,4 +628,4 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 		end
 	end)
 end
-coroutine.wrap(NPHTB_fake_script)()
+coroutine.wrap(NPHTB_fake_script)() --
