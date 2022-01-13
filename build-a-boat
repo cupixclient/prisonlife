@@ -560,11 +560,11 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 			T:Play()
 			wait(15) 
 			local CFrame2 = CFrame.new(-41.8766, 98.2304, 8617.16)
-			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame2})
+			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame2})
 			T:Play()
 			wait(45)
 			local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
-			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
+			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame3})
 			T:Play()
 			end
 			wait(100)
@@ -581,11 +581,11 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 			T:Play()
 			wait(15) 
 			local CFrame2 = CFrame.new(-41.8766, 98.2304, 8617.16)
-			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame2})
+			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame2})
 			T:Play()
-			wait(45)
+			wait(25)
 			local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
-			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
+			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame3})
 			T:Play()
 		end
 		if messagesplit[1] == ".goto" then
