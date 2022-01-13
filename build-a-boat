@@ -552,6 +552,7 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 		if messagesplit[1] == ".autofarm" then
 		_G.Farm = true
 			while _G.Farm ==  true do 
+					print'autofarm'
 					local FirstTime = 5
 					local SecondTime = 25
 					local ThirdTime = 45
@@ -563,8 +564,8 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame2})
 					T:Play()
 					wait(45)
-					local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
-					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame3})
+					local CFrame3 = CFrame.new(-55.8801956, -361.116333, 9488.1377)
+					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
 					T:Play()
 					wait(60)
 			end
@@ -573,7 +574,8 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 			_G.Farm = false
 		end
 		if message == ".farmonce" then
-			local FirstTime = 5
+		print'farmonce'
+					local FirstTime = 5
 					local SecondTime = 25
 					local ThirdTime = 45
 					local CFrame1 = CFrame.new(-62.8633, 57.9417, 25.8448)
@@ -584,10 +586,10 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame2})
 					T:Play()
 					wait(45)
-					local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
-					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame3})
+					local CFrame3 = CFrame.new(-55.8801956, -361.116333, 9488.1377)
+					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
 					T:Play()
-			wait(60)
+					wait(60)		
 		end
 		if messagesplit[1] == ".goto" then
 			local name = messagesplit[2]
