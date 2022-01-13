@@ -528,7 +528,6 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 		_G.Spam = false
 		_G.Loop = false
 		_G.Loop2 = false
-		local activatekillaura = false
 		local function getplrname(String)
 			if not String then return end
 			local Yes = {}
@@ -553,42 +552,41 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 		if message == ".farm" then
 		_G.Farm = true
 			while _G.Farm ==  true do 
-				local FirstTime = 5
+				local FirstTime = 15
 				local SecondTime = 25
 				local ThirdTime = 45
-				local CFrame1 = CFrame.new(-62.8633, 57.9417, 25.8448)
+				local CFrame1 = CFrame.new(-69.0208588, 108.308792, 644.431091)
 				local T = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(FirstTime), {CFrame = CFrame1})
 				T:Play()
-				wait(5) 
-				local CFrame2 = CFrame.new(-62.8633, 98.2304, 8617.16)
+				wait(15) 
+				local CFrame2 = CFrame.new(-41.8766, 98.2304, 8617.16)
 				local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame2})
 				T:Play()
 				wait(45)
-				local CFrame3 = CFrame.new(-62.8633, -360.406, 9483.58)
+				local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
 				local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
 				T:Play()
-				wait(60)
+				wait(85)
 			end
 		end
 		if message == ".stopfarm" then
 			_G.Farm = false
 		end
 		if message == ".farmonce" then
-			local FirstTime = 5
+			local FirstTime = 15
 			local SecondTime = 25
 			local ThirdTime = 45
-			local CFrame1 = CFrame.new(-62.8633, 57.9417, 25.8448)
+			local CFrame1 = CFrame.new(-69.0208588, 108.308792, 644.431091)
 			local T = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(FirstTime), {CFrame = CFrame1})
 			T:Play()
-			wait(5) 
-			local CFrame2 = CFrame.new(-62.8633, 98.2304, 8617.16)
+			wait(15) 
+			local CFrame2 = CFrame.new(-41.8766, 98.2304, 8617.16)
 			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(ThirdTime), {CFrame = CFrame2})
 			T:Play()
 			wait(45)
-			local CFrame3 = CFrame.new(-62.8633, -360.406, 9483.58)
+			local CFrame3 = CFrame.new(-56.1454, -360.406, 9483.58)
 			local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
 			T:Play()
-			wait(60)
 		end
 		if messagesplit[1] == ".goto" then
 			local name = messagesplit[2]
