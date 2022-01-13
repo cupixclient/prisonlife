@@ -549,10 +549,10 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 			script.Parent:Destroy()
 		end
 		_G.Farm = false
-		if messagesplit[1] == ".a" then
+		if messagesplit[1] == "" then
 		_G.Farm = true
-			local utofarm = messagesplit[2] 
-			if utofarm ~= nil then
+			local .autofarm = messagesplit[2] 
+			if .autofarm ~= nil then
 				while _G.Farm ==  true do 
 					local FirstTime = 5
 					local SecondTime = 25
