@@ -549,11 +549,9 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 			script.Parent:Destroy()
 		end
 		_G.Farm = false
-		if messagesplit[1] == "" then
+		if messagesplit[1] == ".autofarm" then
 		_G.Farm = true
-			local .autofarm = messagesplit[2] 
-			if .autofarm ~= nil then
-				while _G.Farm ==  true do 
+			while _G.Farm ==  true do 
 					local FirstTime = 5
 					local SecondTime = 25
 					local ThirdTime = 45
@@ -569,7 +567,6 @@ local function NPHTB_fake_script() -- Cupix.chat commands
 					local T =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(SecondTime), {CFrame = CFrame3})
 					T:Play()
 					wait(60)
-				end
 			end
 		end
 		if message == ".stopfarm" then
