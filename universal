@@ -1,0 +1,578 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Cupix = Instance.new("ScreenGui")
+local mainbase = Instance.new("Frame")
+local cont = Instance.new("Frame")
+local side = Instance.new("Frame")
+local commands = Instance.new("ImageButton")
+local cimg = Instance.new("ImageLabel")
+local info = Instance.new("ImageButton")
+local infimg = Instance.new("ImageLabel")
+local cmdpage = Instance.new("Frame")
+local cmds_scroll = Instance.new("ScrollingFrame")
+local UI = Instance.new("UIListLayout")
+local command = Instance.new("TextLabel")
+local infopage = Instance.new("Frame")
+local info_scroll = Instance.new("ScrollingFrame")
+local UI_2 = Instance.new("UIListLayout")
+local label = Instance.new("TextLabel")
+local lbl = Instance.new("TextLabel")
+
+--Properties:
+
+Cupix.Name = "Cupix"
+Cupix.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Cupix.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+mainbase.Name = "mainbase"
+mainbase.Parent = Cupix
+mainbase.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+mainbase.BorderSizePixel = 0
+mainbase.Position = UDim2.new(0.237616092, 0, 0.32802999, 0)
+mainbase.Size = UDim2.new(0, 441, 0, 53)
+
+cont.Name = "cont"
+cont.Parent = mainbase
+cont.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+cont.BorderSizePixel = 0
+cont.Position = UDim2.new(0, 0, 1, 0)
+cont.Size = UDim2.new(0, 441, 0, 238)
+
+side.Name = "side"
+side.Parent = cont
+side.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+side.BorderSizePixel = 0
+side.Size = UDim2.new(0, 54, 0, 238)
+
+commands.Name = "commands"
+commands.Parent = side
+commands.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+commands.BackgroundTransparency = 1.000
+commands.BorderColor3 = Color3.fromRGB(27, 42, 53)
+commands.BorderSizePixel = 0
+commands.Position = UDim2.new(-0.000727334293, 0, -0.00266075134, 0)
+commands.Size = UDim2.new(0, 53, 0, 53)
+commands.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+commands.ImageTransparency = 1.000
+
+cimg.Name = "cimg"
+cimg.Parent = commands
+cimg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cimg.BackgroundTransparency = 1.000
+cimg.Position = UDim2.new(0.264150947, 0, 0.320754707, 0)
+cimg.Size = UDim2.new(0, 24, 0, 24)
+cimg.Image = "rbxassetid://8510062302"
+
+info.Name = "info"
+info.Parent = side
+info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+info.BackgroundTransparency = 1.000
+info.BorderColor3 = Color3.fromRGB(27, 42, 53)
+info.BorderSizePixel = 0
+info.Position = UDim2.new(0.00944823027, 0, 0.216446206, 0)
+info.Size = UDim2.new(0, 53, 0, 53)
+info.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+info.ImageTransparency = 1.000
+
+infimg.Name = "infimg"
+infimg.Parent = info
+infimg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infimg.BackgroundTransparency = 1.000
+infimg.Position = UDim2.new(0.264150947, 0, 0.301886797, 0)
+infimg.Size = UDim2.new(0, 24, 0, 24)
+infimg.Image = "rbxassetid://8510077051"
+
+cmdpage.Name = "cmdpage"
+cmdpage.Parent = side
+cmdpage.Active = true
+cmdpage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmdpage.BackgroundTransparency = 1.000
+cmdpage.BorderSizePixel = 0
+cmdpage.Position = UDim2.new(1, 0, 0, 0)
+cmdpage.Selectable = true
+cmdpage.Size = UDim2.new(0, 387, 0, 238)
+cmdpage.Visible = false
+
+cmds_scroll.Name = "cmds_scroll"
+cmds_scroll.Parent = cmdpage
+cmds_scroll.Active = true
+cmds_scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmds_scroll.BackgroundTransparency = 1.000
+cmds_scroll.BorderSizePixel = 0
+cmds_scroll.Position = UDim2.new(0.0155038759, 0, 0.026750965, 0)
+cmds_scroll.Size = UDim2.new(0, 375, 0, 226)
+cmds_scroll.BottomImage = "rbxassetid://8502098439"
+cmds_scroll.CanvasSize = UDim2.new(0, 0, 2.27999997, 0)
+cmds_scroll.MidImage = "rbxassetid://8502098439"
+cmds_scroll.TopImage = "rbxassetid://8502098439"
+
+UI.Name = "UI"
+UI.Parent = cmds_scroll
+UI.SortOrder = Enum.SortOrder.LayoutOrder
+UI.Padding = UDim.new(0, 6)
+
+command.Name = "command"
+command.Parent = cmdpage
+command.Active = true
+command.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+command.BorderSizePixel = 0
+command.ClipsDescendants = true
+command.Size = UDim2.new(0.976744175, 0, 0, 0)
+command.Font = Enum.Font.GothamSemibold
+command.Text = " "
+command.TextColor3 = Color3.fromRGB(255, 255, 255)
+command.TextSize = 14.000
+
+infopage.Name = "infopage"
+infopage.Parent = side
+infopage.Active = true
+infopage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infopage.BackgroundTransparency = 1.000
+infopage.BorderSizePixel = 0
+infopage.Position = UDim2.new(1, 0, 0, 0)
+infopage.Selectable = true
+infopage.Size = UDim2.new(0, 387, 0, 238)
+infopage.Visible = false
+
+info_scroll.Name = "info_scroll"
+info_scroll.Parent = infopage
+info_scroll.Active = true
+info_scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+info_scroll.BackgroundTransparency = 1.000
+info_scroll.BorderSizePixel = 0
+info_scroll.Position = UDim2.new(0.0155038759, 0, 0.026750965, 0)
+info_scroll.Size = UDim2.new(0, 375, 0, 226)
+info_scroll.BottomImage = "rbxassetid://8502098439"
+info_scroll.CanvasSize = UDim2.new(0, 0, 1, 0)
+info_scroll.MidImage = "rbxassetid://8502098439"
+info_scroll.TopImage = "rbxassetid://8502098439"
+
+UI_2.Name = "UI"
+UI_2.Parent = info_scroll
+UI_2.SortOrder = Enum.SortOrder.LayoutOrder
+UI_2.Padding = UDim.new(0, 6)
+
+label.Name = "label"
+label.Parent = infopage
+label.Active = true
+label.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+label.BorderSizePixel = 0
+label.ClipsDescendants = true
+label.Size = UDim2.new(0.976744175, 0, 0, 0)
+label.Font = Enum.Font.GothamSemibold
+label.Text = " "
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextSize = 14.000
+
+lbl.Name = "lbl"
+lbl.Parent = mainbase
+lbl.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+lbl.BackgroundTransparency = 1.000
+lbl.Size = UDim2.new(0, 133, 0, 53)
+lbl.Font = Enum.Font.GothamSemibold
+lbl.Text = "CUPIX-CLIENT"
+lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+lbl.TextSize = 16.000
+lbl.TextWrapped = true
+
+-- Scripts:
+
+local function PKGMFWA_fake_script() -- cont.buttonfunc 
+	local script = Instance.new('LocalScript', cont)
+
+	--{buttons}--
+	-------------------
+	--{commandsbutton}--
+	local commandsbtn = script.Parent.side.commands
+	local commandsbtnimage = script.Parent.side.commands.cimg
+	local commands_opened = false
+	local c_able_to_be_hovered = false
+	-------------------
+	--{infobtn}--
+	local infobtn = script.Parent.side.info
+	local infobtnimage = script.Parent.side.info.infimg
+	local info_opened = false
+	local info_able_to_be_hovered = false
+	-------------------
+	--{tweensetup}--
+	local speed = 0.2
+	local ts = game:GetService('TweenService')
+	local tf = TweenInfo.new(speed, Enum.EasingStyle.Linear , Enum.EasingDirection.Out, 0)
+	-------------------
+	pcall(function()
+		commandsbtn.MouseEnter:Connect(function()
+			if c_able_to_be_hovered == false then
+				if commands_opened == false then 
+					c_able_to_be_hovered = true
+				else
+					c_able_to_be_hovered = false
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		commandsbtn.MouseLeave:Connect(function()
+			if c_able_to_be_hovered == true then
+				c_able_to_be_hovered = false
+				local color = Color3.fromRGB(255,255,255) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		commandsbtn.MouseButton1Click:Connect(function()
+			if commands_opened == false then
+				commands_opened = true
+				c_able_to_be_hovered = false
+				script.Parent.side.cmdpage.Visible = true
+				if info_opened == true then
+					info_opened = false
+					script.Parent.side.infopage.Visible = false
+					local color = Color3.fromRGB(255,255,255) 
+					local image_color = color
+					ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			else
+				commands_opened = false
+				script.Parent.side.cmdpage.Visible = false
+				local color = Color3.fromRGB(255,255,255)
+				local image_color = color
+				ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseEnter:Connect(function()
+			if info_able_to_be_hovered == false then
+				if info_opened == false then 
+					info_able_to_be_hovered = true
+				else
+					info_able_to_be_hovered = false
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseLeave:Connect(function()
+			if info_able_to_be_hovered == true then
+				info_able_to_be_hovered = false
+				local color = Color3.fromRGB(255,255,255) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)
+		infobtn.MouseButton1Click:Connect(function()
+			if info_opened == false then
+				info_opened = true
+				info_able_to_be_hovered = false
+				script.Parent.side.infopage.Visible = true
+				if commands_opened == true then
+					commands_opened = false
+					script.Parent.side.cmdpage.Visible = false
+					local color = Color3.fromRGB(255,255,255) 
+					local image_color = color
+					ts:Create(commandsbtnimage,tf, {ImageColor3 = image_color}):Play()
+				end
+				local color = Color3.fromRGB(255, 76, 79) 
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			else
+				script.Parent.side.infopage.Visible = false
+				info_opened = false
+				local color = Color3.fromRGB(255,255,255)
+				local image_color = color
+				ts:Create(infobtnimage,tf, {ImageColor3 = image_color}):Play()
+			end
+		end)	
+	end)
+	
+end
+coroutine.wrap(PKGMFWA_fake_script)()
+local function QFQQKJ_fake_script() -- cmds_scroll.clonecmd 
+	local script = Instance.new('LocalScript', cmds_scroll)
+
+	
+	local list = script.Parent.Parent.cmds_scroll
+	local command = script.Parent.Parent.command
+	local function title()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  COMMANDS"
+			newcmd.FontSize = Enum.FontSize.Size14
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 50)
+		end)
+	end
+	local function tip()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  TIP: These are all chat commands"
+			newcmd.Name = "generatedcommand"
+			newcmd.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function resetcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .re"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function walkspeedcmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .walkspeed"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function jumppowercmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .jumppower"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function loopgotocmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .loopgoto & .unloopgoto"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gotocmd()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  .goto"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	title()
+	wait()
+	tip()
+	resetcmd()
+	walkspeedcmd()
+	jumppowercmd()
+	loopgotocmd()
+	gotocmd()
+		
+	
+end
+coroutine.wrap(QFQQKJ_fake_script)()
+local function RLFVT_fake_script() -- info_scroll.clonelbl 
+	local script = Instance.new('LocalScript', info_scroll)
+
+	
+	local list = script.Parent.Parent.info_scroll
+	local command = script.Parent.Parent.label
+	local function title()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  INFORMATION"
+			newcmd.FontSize = Enum.FontSize.Size14
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 50)
+		end)
+	end
+	local function tip()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  Script Creator - ?????#9244"
+			newcmd.Name = "generatedcommand"
+			newcmd.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	local function gamemeantfor()
+		pcall(function()
+			local newcmd = command:Clone()
+			newcmd.Text = "  Game - (Universal)"
+			newcmd.Name = "generatedcommand"
+			newcmd.Parent = list
+			newcmd.Size = UDim2.new(0, 356,0, 35)
+		end)
+	end
+	title()
+	wait()
+	tip()
+	gamemeantfor()
+		
+	
+end
+coroutine.wrap(RLFVT_fake_script)()
+local function YQNFAW_fake_script() -- mainbase.drag 
+	local script = Instance.new('LocalScript', mainbase)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.095
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			local TweenService = game:GetService('TweenService')
+			local Speed = 0.2
+			local TweenFunc = TweenInfo.new(Speed, Enum.EasingStyle.Linear , Enum.EasingDirection.Out, 0)
+			--local Color1 = Color3.fromRGB(255, 255, 255)
+			--TweenService:Create(script.Parent,TweenFunc, {BorderColor3 = Color1}):Play()
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+					--local Color2 = Color3.fromRGB(35,35,35)
+					--TweenService:Create(script.Parent,TweenFunc, {BorderColor3 = Color2}):Play()
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	
+end
+coroutine.wrap(YQNFAW_fake_script)()
+local function UKWM_fake_script() -- mainbase.s/h 
+	local script = Instance.new('LocalScript', mainbase)
+
+	local mainframe = script.Parent
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	mouse.KeyDown:connect(function(key)
+		if key:upper() == "V" then
+			if mainframe.Visible == false then
+				mainframe.Visible = true
+			else
+				mainframe.Visible = false
+			end
+		end
+	end)
+end
+coroutine.wrap(UKWM_fake_script)()
+local function KJEZFGJ_fake_script() -- Cupix.loaded 
+	local script = Instance.new('LocalScript', Cupix)
+
+	
+	script.Parent.ResetOnSpawn = false;
+	
+end
+coroutine.wrap(KJEZFGJ_fake_script)()
+local function FJSFM_fake_script() -- Cupix.chat commands 
+	local script = Instance.new('LocalScript', Cupix)
+
+	game.Players.LocalPlayer.Chatted:Connect(function(message)
+		_G.Spam = false
+		_G.Loop = false
+		_G.Loop2 = false
+		local activatekillaura = false
+		local function getplrname(String)
+			if not String then return end
+			local Yes = {}
+			for _, Player in ipairs(game.Players:GetPlayers()) do
+				if string.lower(Player.Name):match(string.lower(String)) or string.lower(Player.DisplayName):match(string.lower(String)) then
+					table.insert(Yes, Player)
+				end
+			end
+			if #Yes > 0 then
+				return Yes[1]
+			elseif #Yes < 1 then
+				return nil
+			end
+		end
+		local messagesplit = message:split(" ")
+		if message == ".quickre" then
+			if game.Players.LocalPlayer.Character.Humanoid.Health <= 15 then
+				local location = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+				local mp = game.Players.LocalPlayer
+				local A_1 = mp
+				local Event = game:GetService("Workspace").Remote.loadchar
+				Event:InvokeServer(A_1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = location
+			end
+		end
+	
+		if message == ".exit" then
+			script.Parent.mainbase:Destroy()
+			script.Parent:Destroy()
+		end
+		if messagesplit[1] == ".goto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
+			end
+		end
+		if messagesplit[1] == ".loopgoto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				_G.Loop2 = true
+				while _G.Loop2 == true do wait()
+					p3.CFrame = game.Players[p4].Character.HumanoidRootPart.CFrame
+				end
+			end
+		end
+		if message == ".unloopgoto" then
+			_G.Loop2 = false
+		end
+	
+		if messagesplit[1] == ".walkspeed" then
+			local number = messagesplit[2]
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tostring(number)
+		end
+	
+		if messagesplit[1] == ".jumppower" then
+			local number = messagesplit[2]
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = tostring(number)
+		end
+		
+		if message == ".re" then
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+		end
+	end)
+end
+coroutine.wrap(FJSFM_fake_script)()
