@@ -1,8 +1,12 @@
 --{Prison Life}--
 if game.PlaceId == 155615604 then
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/cupixclient/source/main/prisonlife'),true))()
+	else
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/cupixclient/source/main/universal'),true))()
 end
 --{Build A Boat}-- 
 if game.PlaceId == 537413528 then
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/cupixclient/source/main/build-a-boat'),true))()
+	else
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/cupixclient/source/main/universal'),true))()
 end
